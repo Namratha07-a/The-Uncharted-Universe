@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Movie — Uncharted Universe</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Cinzel:wght@400;600;700&family=Crimson+Text:ital,wght@0,400;0,600;1,400&display=swap">
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🗺️</text></svg>" />
+</head>
+<body>
+
+  <div id="scroll-progress"></div>
+  <nav id="navbar">
+    <a href="index.html" class="nav-brand">⚓ Uncharted <span>Universe</span></a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li><li><a href="characters.html">Characters</a></li>
+      <li><a href="games.html">Games</a></li><li><a href="movie.html" class="active">Movie</a></li>
+      <li><a href="lore.html">Lore</a></li>
+    </ul>
+    <button class="nav-music-btn" title="Play music">🎵</button>
+    <div class="hamburger"><span></span><span></span><span></span></div>
+  </nav>
+  <div class="mobile-menu">
+    <a href="index.html">🏠 Home</a><a href="characters.html">🧍 Characters</a>
+    <a href="games.html">🗺️ Games</a><a href="movie.html">🎬 Movie</a>
+    <a href="lore.html">📜 Lore</a><a href="login.html">🔑 Sign In</a>
+  </div>
+
+  <main class="page-content">
+
+    <div class="movie-hero">
+      <div class="movie-hero-film">
+        <img src="images/movie-poster.jpg" alt="Uncharted Movie Poster" class="movie-poster-img">
+      </div>
+      <div class="movie-hero-content">
+        <div class="movie-hero-label">2022 · Sony Pictures</div>
+        <h1 class="movie-hero-title">Uncharted</h1>
+        <div class="movie-hero-meta">PG-13 <span>·</span> 116 min <span>·</span> Directed by Ruben Fleischer</div>
+        <div style="margin-top:1.5rem;display:flex;gap:0.8rem;flex-wrap:wrap;">
+          <span onclick="loadTrailer()" class="btn btn-gold" style="cursor:pointer;">▶ Watch Trailer</span>
+          <a href="#comparison" class="btn btn-outline">Game vs Movie</a>
+        </div>
+      </div>
+    </div>
+
+    <section class="section">
+      <div class="section-title reveal">Plot Summary</div>
+      <div class="section-divider reveal"></div>
+      <div class="plot-box reveal">
+        <strong style="color:var(--gold);">Nathan Drake</strong> is a street-smart young bartender in New York who moonlights as a pickpocket.
+        His life changes when <strong style="color:var(--gold);">Victor "Sully" Sullivan</strong> recruits him to help find a treasure assembled
+        during Ferdinand Magellan's voyage — and in exchange, Sully will help Nate find his missing brother
+        <strong style="color:var(--gold);">Sam</strong>. Their quest takes them from Barcelona to the Philippines, where two 16th-century galleons
+        hang suspended from cliffs. Competing against the ruthless Santiago Moncada and mercenary Jo Braddock,
+        Nate and Sully must navigate betrayal, spectacular action, and the mystery of Sam's fate. The film works
+        as an origin story — showing how a young Nate becomes the adventure-hardened fortune hunter of the games.
+      </div>
+    </section>
+
+    <section style="background:var(--dark-panel);padding:5rem 2rem;border-top:1px solid rgba(201,168,76,0.08);">
+      <div style="max-width:1100px;margin:0 auto;">
+        <div class="section-title reveal">Cast</div>
+        <div class="section-divider reveal"></div>
+        <div class="cast-grid">
+          <div class="cast-card reveal" data-delay="0"><h3>Tom Holland</h3><div class="cast-role">as Nathan Drake</div><div class="cast-actor">Spider-Man · Cherry</div><p style="color:var(--text-muted);font-size:0.85rem;margin-top:0.8rem;line-height:1.6;">Holland brings youthful energy to the role — a younger, less experienced Nate learning the ropes for the first time.</p></div>
+          <div class="cast-card reveal" data-delay="80"><h3>Mark Wahlberg</h3><div class="cast-role">as Victor Sullivan</div><div class="cast-actor">The Departed · Boogie Nights</div><p style="color:var(--text-muted);font-size:0.85rem;margin-top:0.8rem;line-height:1.6;">A younger, harder-edged Sully — without the iconic mustache for most of the film (it appears in the final scene).</p></div>
+          <div class="cast-card reveal" data-delay="160"><h3>Sophia Ali</h3><div class="cast-role">as Chloe Frazer</div><div class="cast-actor">Grey's Anatomy · The Wilds</div><p style="color:var(--text-muted);font-size:0.85rem;margin-top:0.8rem;line-height:1.6;">Witty, self-serving, and capable. Chloe is always asking whether she's an ally or a rival.</p></div>
+          <div class="cast-card reveal" data-delay="240"><h3>Tati Gabrielle</h3><div class="cast-role">as Jo Braddock</div><div class="cast-actor">You · Chilling Adventures</div><p style="color:var(--text-muted);font-size:0.85rem;margin-top:0.8rem;line-height:1.6;">A new character created for the film. The formidable mercenary who serves as the most active physical threat.</p></div>
+          <div class="cast-card reveal" data-delay="320"><h3>Antonio Banderas</h3><div class="cast-role">as Santiago Moncada</div><div class="cast-actor">Mask of Zorro · Desperado</div><p style="color:var(--text-muted);font-size:0.85rem;margin-top:0.8rem;line-height:1.6;">A wealthy heir who believes the treasure belongs to his bloodline. Banderas brings effortless menace to the role.</p></div>
+          <div class="cast-card reveal" data-delay="400"><h3>Nolan North</h3><div class="cast-role">Cameo (original Nate)</div><div class="cast-actor">Voice of Nathan Drake · all games</div><p style="color:var(--text-muted);font-size:0.85rem;margin-top:0.8rem;line-height:1.6;">The iconic voice of game-Nate appears in a brief cameo. Keep an eye out for the scene with Sully.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-title reveal">Official Trailer</div>
+      <div class="section-divider reveal"></div>
+      <div class="trailer-wrap reveal">
+        <video controls preload="metadata" style="position:absolute;inset:0;width:100%;height:100%;background:#000;object-fit:contain;">
+  <source src="myvideo.mp4" type="video/mp4">
+</video>
+      </div>
+    </section>
+
+    <section style="background:var(--dark-panel);padding:4rem 2rem;border-top:1px solid rgba(201,168,76,0.08);">
+      <div style="max-width:1100px;margin:0 auto;">
+        <div class="section-title reveal">Box Office</div>
+        <div class="section-divider reveal"></div>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:1.5rem;margin-top:2rem;">
+          <div class="stat-item reveal" style="background:var(--dark-bg);border:1px solid rgba(201,168,76,0.1);border-radius:3px;" data-delay="0"><span class="stat-number">$401M</span><span class="stat-label">Worldwide Gross</span></div>
+          <div class="stat-item reveal" style="background:var(--dark-bg);border:1px solid rgba(201,168,76,0.1);border-radius:3px;" data-delay="80"><span class="stat-number">$120M</span><span class="stat-label">Budget</span></div>
+          <div class="stat-item reveal" style="background:var(--dark-bg);border:1px solid rgba(201,168,76,0.1);border-radius:3px;" data-delay="160"><span class="stat-number">40%</span><span class="stat-label">Critics Score</span></div>
+          <div class="stat-item reveal" style="background:var(--dark-bg);border:1px solid rgba(201,168,76,0.1);border-radius:3px;" data-delay="240"><span class="stat-number">90%</span><span class="stat-label">Audience Score</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="comparison">
+      <div class="section-title reveal">Game vs. Movie</div>
+      <div class="section-divider reveal"></div>
+      <div class="reveal" style="overflow-x:auto;margin-top:1.5rem;">
+        <table class="compare-table">
+          <thead><tr><th>Aspect</th><th>🎮 The Games</th><th>🎬 The Movie</th></tr></thead>
+          <tbody>
+            <tr><td>Nathan Drake</td><td>Mid-30s, experienced, weathered. Deep history with Sully and Elena.</td><td>Young bartender in his 20s, learning the ropes for the first time.</td></tr>
+            <tr><td>Victor Sullivan</td><td>Older father figure. Iconic white mustache. Warmth behind the gruffness.</td><td>Younger and harder. Mustache only appears at the very end.</td></tr>
+            <tr><td>Tone</td><td>Cinematic with deep emotional arcs built across multiple entries.</td><td>Lighthearted action-adventure. Fun over depth.</td></tr>
+            <tr><td>Elena Fisher</td><td>Core character across 4 games. Nate's moral compass and eventual wife.</td><td>Absent from the film entirely.</td></tr>
+            <tr><td>Historical Hook</td><td>El Dorado, Shambhala, Iram, Libertalia — each rooted in real legend.</td><td>Ferdinand Magellan's lost treasure. Fresh but less fantastical.</td></tr>
+            <tr><td>Verdict</td><td>Masterworks of interactive storytelling. UC2 and UC4 among the best games ever made.</td><td>A fun, breezy crowd-pleaser. Works best as an intro before you play the games.</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="footer-logo">⚓ Uncharted Universe</div>
+    <div class="footer-links">
+      <a href="index.html">Home</a><a href="characters.html">Characters</a>
+      <a href="games.html">Games</a><a href="movie.html">Movie</a><a href="lore.html">Lore</a>
+    </div>
+    <p class="footer-disclaimer">Fan-made tribute. Uncharted™ is a trademark of Sony Interactive Entertainment &amp; Naughty Dog.</p>
+  </footer>
+  <script src="main.js"></script>
+</body>
+</html>

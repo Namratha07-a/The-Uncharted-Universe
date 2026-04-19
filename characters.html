@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Characters — Uncharted Universe</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Cinzel:wght@400;600;700&family=Crimson+Text:ital,wght@0,400;0,600;1,400&display=swap">
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🗺️</text></svg>" />
+</head>
+<body>
+  <div id="scroll-progress"></div>
+
+  <nav id="navbar">
+    <a href="index.html" class="nav-brand">⚓ Uncharted <span>Universe</span></a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="characters.html" class="active">Characters</a></li>
+      <li><a href="games.html">Games</a></li>
+      <li><a href="movie.html">Movie</a></li>
+      <li><a href="lore.html">Lore</a></li>
+    </ul>
+    <button class="nav-music-btn" title="Play music">🎵</button>
+    <div class="hamburger"><span></span><span></span><span></span></div>
+  </nav>
+  <div class="mobile-menu">
+    <a href="index.html">🏠 Home</a>
+    <a href="characters.html">🧍 Characters</a>
+    <a href="games.html">🗺️ Games</a>
+    <a href="movie.html">🎬 Movie</a>
+    <a href="lore.html">📜 Lore</a>
+    <a href="login.html">🔑 Sign In</a>
+  </div>
+
+  <div id="char-modal" class="modal-overlay">
+    <div class="modal-box">
+      <button class="modal-close">✕</button>
+      <div class="modal-header">
+        <div class="modal-avatar"></div>
+        <div class="modal-header-text">
+          <h2 class="modal-name"></h2>
+          <div class="modal-role"></div>
+          <div class="modal-actor"></div>
+        </div>
+      </div>
+      <div class="modal-body">
+        <div class="modal-section"><h4>Biography</h4><p class="modal-full-bio"></p></div>
+        <div class="modal-section"><h4>Skills</h4><p class="modal-skills-text"></p></div>
+        <div class="modal-section"><h4>Notable Quote</h4><p class="modal-quotes" style="font-style:italic;color:var(--gold-light);font-size:1.1rem;"></p></div>
+        <div class="modal-section"><h4>Traits</h4><div class="modal-traits"></div></div>
+        <div class="modal-section"><h4>Appearances</h4><div class="modal-appearances"></div></div>
+      </div>
+    </div>
+  </div>
+
+  <main class="page-content">
+
+    <div class="characters-hero">
+      <div style="position:relative;z-index:1;text-align:center;">
+        <div class="page-hero-title reveal">Characters</div>
+        <div class="page-hero-sub reveal">The main cast across the Uncharted series</div>
+      </div>
+    </div>
+
+    <section class="section">
+      <div class="section-title reveal">Main Characters</div>
+      <div class="section-divider reveal"></div>
+
+      <div class="characters-grid">
+
+        <div class="char-card reveal" data-delay="0">
+          <div class="char-img-wrap">
+            <img src="images/nathan-drake.jpg" alt="Nathan Drake" class="char-avatar">
+            <div class="char-glow"></div>
+            <div class="char-overlay-name">
+              <h3>Nathan Drake</h3>
+              <div class="char-role">Protagonist · Fortune Hunter</div>
+            </div>
+          </div>
+          <div class="char-body">
+            <p>The wisecracking treasure hunter who claims descent from Sir Francis Drake. His charm and luck are exceeded only by his talent for surviving impossible situations.</p>
+            <div class="char-stats">
+              <div class="char-stat"><span class="char-stat-label">Voice</span><span class="char-stat-val">Nolan North</span></div>
+              <div class="char-stat"><span class="char-stat-label">Appears in</span><span class="char-stat-val">All 5 Games</span></div>
+            </div>
+            <button class="char-expand-btn" onclick="openCharModal('nate')">▶ Full Profile</button>
+          </div>
+        </div>
+
+        <div class="char-card reveal" data-delay="100">
+          <div class="char-img-wrap">
+            <img src="images/victor-sullivan.jpg" alt="Victor Sullivan" class="char-avatar">
+            <div class="char-glow"></div>
+            <div class="char-overlay-name">
+              <h3>Victor Sullivan</h3>
+              <div class="char-role">Mentor · Father Figure</div>
+            </div>
+          </div>
+          <div class="char-body">
+            <p>The seasoned, cigar-chomping smuggler and treasure hunter who became a father figure to young Nathan Drake. Sully's experience has saved the crew from countless disasters.</p>
+            <div class="char-stats">
+              <div class="char-stat"><span class="char-stat-label">Voice</span><span class="char-stat-val">Richard McGonagle</span></div>
+              <div class="char-stat"><span class="char-stat-label">Appears in</span><span class="char-stat-val">4 Games</span></div>
+            </div>
+            <button class="char-expand-btn" onclick="openCharModal('sully')">▶ Full Profile</button>
+          </div>
+        </div>
+
+        <div class="char-card reveal" data-delay="200">
+          <div class="char-img-wrap">
+            <img src="images/elena-fisher.jpg" alt="Elena Fisher" class="char-avatar">
+            <div class="char-glow"></div>
+            <div class="char-overlay-name">
+              <h3>Elena Fisher</h3>
+              <div class="char-role">Journalist · Partner</div>
+            </div>
+          </div>
+          <div class="char-body">
+            <p>The fearless journalist who evolved from skeptical documentarian to Nate's most capable partner. Her sharp mind and moral compass make her indispensable.</p>
+            <div class="char-stats">
+              <div class="char-stat"><span class="char-stat-label">Voice</span><span class="char-stat-val">Emily Rose</span></div>
+              <div class="char-stat"><span class="char-stat-label">Appears in</span><span class="char-stat-val">4 Games</span></div>
+            </div>
+            <button class="char-expand-btn" onclick="openCharModal('elena')">▶ Full Profile</button>
+          </div>
+        </div>
+
+        <div class="char-card reveal" data-delay="300">
+          <div class="char-img-wrap">
+            <img src="images/samuel-drake.jpg" alt="Samuel Drake" class="char-avatar">
+            <div class="char-glow"></div>
+            <div class="char-overlay-name">
+              <h3>Samuel Drake</h3>
+              <div class="char-role">Nathan's Brother</div>
+            </div>
+          </div>
+          <div class="char-body">
+            <p>Nate's older brother, presumed dead for fifteen years. Sam's sudden reappearance throws Nate's settled life into chaos and pulls him back into the world he tried to leave.</p>
+            <div class="char-stats">
+              <div class="char-stat"><span class="char-stat-label">Voice</span><span class="char-stat-val">Troy Baker</span></div>
+              <div class="char-stat"><span class="char-stat-label">Appears in</span><span class="char-stat-val">Uncharted 4</span></div>
+            </div>
+            <button class="char-expand-btn" onclick="openCharModal('sam')">▶ Full Profile</button>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <section style="background:var(--dark-panel); padding:5rem 2rem; border-top:1px solid rgba(201,168,76,0.08);">
+      <div style="max-width:1200px; margin:0 auto;">
+        <div class="section-title reveal">Supporting Cast</div>
+        <div class="section-divider reveal"></div>
+        <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:1.5rem; margin-top:2rem;">
+
+          <div class="reveal support-card" data-delay="0">
+           <img src="images/chloe-frazer.jpg" alt="Chloe Frazer" class="support-card-img">
+            <!-- Replace with: <img src="images/chloe-frazer.jpg" alt="Chloe Frazer" class="support-card-img"> -->
+            <h3 class="support-name">Chloe Frazer</h3>
+            <div class="support-role">Thief · Lost Legacy protagonist</div>
+            <p>Australian thief and former partner of Nate's. Leads her own adventure in India recovering the Tusk of Ganesh.</p>
+            <div class="support-actor">Claudia Black</div>
+          </div>
+
+          <div class="reveal support-card" data-delay="80">
+            <img src="images/nadine-ross.jpg" alt="Nadine Ross" class="support-card-img">
+
+            <!-- Replace with: <img src="images/nadine-ross.jpg" alt="Nadine Ross" class="support-card-img"> -->
+            <h3 class="support-name">Nadine Ross</h3>
+            <div class="support-role">Mercenary · Shoreline PMC</div>
+            <p>Leader of private military company Shoreline. Formidable opponent who later becomes Chloe's reluctant ally.</p>
+            <div class="support-actor">Laura Bailey</div>
+          </div>
+
+          <div class="reveal support-card" data-delay="160">
+           <img src="images/rafe-adler.jpg" alt="Rafe Adler" class="support-card-img">
+
+            <!-- Replace with: <img src="images/rafe-adler.jpg" alt="Rafe Adler" class="support-card-img"> -->
+            <h3 class="support-name">Rafe Adler</h3>
+            <div class="support-role">Main Villain · Uncharted 4</div>
+            <p>A wealthy, obsessive treasure hunter whose craving for glory — not gold — drives him to desperate extremes.</p>
+            <div class="support-actor">Warren Kole</div>
+          </div>
+
+          <div class="reveal support-card" data-delay="240">
+            <img src="images/charlie-cutter.jpg" alt="Charlie Cutter" class="support-card-img">
+
+            <!-- Replace with: <img src="images/charlie-cutter.jpg" alt="Charlie Cutter" class="support-card-img"> -->
+            <h3 class="support-name">Charlie Cutter</h3>
+            <div class="support-role">Agent · Uncharted 3</div>
+            <p>A British agent who appears first as an antagonist before revealing himself as an asset working with Sully.</p>
+            <div class="support-actor">Graham McTavish</div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="footer-logo">⚓ Uncharted Universe</div>
+    <div class="footer-links">
+      <a href="index.html">Home</a>
+      <a href="characters.html">Characters</a>
+      <a href="games.html">Games</a>
+      <a href="movie.html">Movie</a>
+      <a href="lore.html">Lore</a>
+    </div>
+    <p class="footer-disclaimer">Fan-made tribute. Uncharted™ is a trademark of Sony Interactive Entertainment &amp; Naughty Dog.</p>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>

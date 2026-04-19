@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Uncharted Universe</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Cinzel:wght@400;600;700&family=Crimson+Text:ital,wght@0,400;0,600;1,400&display=swap">
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🗺️</text></svg>" />
+</head>
+<body>
+  <div id="scroll-progress"></div>
+
+  <nav id="navbar">
+    <a href="index.html" class="nav-brand">⚓ Uncharted <span>Universe</span></a>
+    <ul class="nav-links">
+      <li><a href="index.html" class="active">Home</a></li>
+      <li><a href="characters.html">Characters</a></li>
+      <li><a href="games.html">Games</a></li>
+      <li><a href="movie.html">Movie</a></li>
+      <li><a href="lore.html">Lore</a></li>
+    </ul>
+    <button class="nav-music-btn" title="Play music">🎵</button>
+    <div class="hamburger"><span></span><span></span><span></span></div>
+  </nav>
+  <div class="mobile-menu">
+    <a href="index.html">🏠 Home</a>
+    <a href="characters.html">🧍 Characters</a>
+    <a href="games.html">🗺️ Games</a>
+    <a href="movie.html">🎬 Movie</a>
+    <a href="lore.html">📜 Lore</a>
+    <a href="login.html">🔑 Sign In</a>
+  </div>
+
+  <main class="page-content">
+
+    <section class="hero">
+      <div class="hero-bg"></div>
+      <div class="hero-map-overlay"></div>
+      <div class="hero-particles"></div>
+      <div class="hero-godray"></div>
+      <div class="hero-content">
+        <div class="hero-badge">PlayStation · Naughty Dog · 2007–2017</div>
+        <h1 class="hero-title">
+          <span class="title-accent">Welcome to the</span>
+          Uncharted<br/>Universe
+        </h1>
+        <p class="hero-tagline">"Fortune favors the bold."</p>
+        <div class="hero-cta">
+          <a href="games.html" class="btn btn-gold">Explore the Games</a>
+          <a href="characters.html" class="btn btn-outline">Meet the Cast</a>
+        </div>
+      </div>
+      <div class="hero-scroll-hint">
+        <span>Scroll to explore</span>
+        <span class="scroll-arrow">▼</span>
+      </div>
+    </section>
+
+    <section class="about-strip">
+      <p class="reveal">
+        <strong>Uncharted</strong> is an action-adventure series developed by <strong>Naughty Dog</strong> for PlayStation.
+        Following fortune hunter <strong>Nathan Drake</strong> across five games from 2007 to 2017, the franchise has sold
+        over <strong>41 million copies</strong> and won more awards than almost any PlayStation series in history.
+      </p>
+    </section>
+
+    <div class="stats-bar">
+      <div class="stat-item"><span class="stat-number">5</span><span class="stat-label">Main Games</span></div>
+      <div class="stat-item"><span class="stat-number">41M+</span><span class="stat-label">Copies Sold</span></div>
+      <div class="stat-item"><span class="stat-number">2007</span><span class="stat-label">First Release</span></div>
+      <div class="stat-item"><span class="stat-number">150+</span><span class="stat-label">Industry Awards</span></div>
+      <div class="stat-item"><span class="stat-number">1</span><span class="stat-label">Blockbuster Film</span></div>
+    </div>
+
+    <section class="section">
+      <div class="section-title reveal">Explore</div>
+      <div class="section-divider reveal"></div>
+      <div class="feature-grid">
+        <a href="characters.html" class="feature-card reveal" data-delay="0">
+          <span class="feature-icon">🧗</span>
+          <h3>Characters</h3>
+          <p>Meet Nathan Drake, Victor Sullivan, Elena Fisher, Samuel Drake and the rest of the cast across the series.</p>
+          <div class="feature-link">View →</div>
+        </a>
+        <a href="games.html" class="feature-card reveal" data-delay="100">
+          <span class="feature-icon">🗺️</span>
+          <h3>All 5 Games</h3>
+          <p>From Drake's Fortune to The Lost Legacy — every entry in the franchise with full storylines and settings.</p>
+          <div class="feature-link">View →</div>
+        </a>
+        <a href="movie.html" class="feature-card reveal" data-delay="200">
+          <span class="feature-icon">🎬</span>
+          <h3>The Movie</h3>
+          <p>Tom Holland and Mark Wahlberg in the 2022 film. Cast, plot, trailer and a comparison to the games.</p>
+          <div class="feature-link">View →</div>
+        </a>
+      </div>
+    </section>
+
+    <section style="background:var(--dark-panel); padding:5rem 2rem; border-top:1px solid rgba(201,168,76,0.08); border-bottom:1px solid rgba(201,168,76,0.08);">
+      <div style="max-width:1000px; margin:0 auto;">
+        <div class="section-title reveal">The Games</div>
+        <div class="section-divider reveal"></div>
+        <div style="display:flex; flex-direction:column; gap:1.2rem; margin-top:2rem;">
+          <div class="timeline-row reveal" data-delay="0">
+            <div class="timeline-year">2007</div>
+            <div class="timeline-bar"></div>
+            <div class="timeline-info">
+              <div class="timeline-game">Uncharted: Drake's Fortune</div>
+              <div class="timeline-note">PS3 · El Dorado · South America</div>
+            </div>
+          </div>
+          <div class="timeline-row reveal" data-delay="80">
+            <div class="timeline-year">2009</div>
+            <div class="timeline-bar"></div>
+            <div class="timeline-info">
+              <div class="timeline-game">Uncharted 2: Among Thieves</div>
+              <div class="timeline-note">PS3 · Cintamani Stone · Nepal &amp; Tibet · GOTY</div>
+            </div>
+          </div>
+          <div class="timeline-row reveal" data-delay="160">
+            <div class="timeline-year">2011</div>
+            <div class="timeline-bar"></div>
+            <div class="timeline-info">
+              <div class="timeline-game">Uncharted 3: Drake's Deception</div>
+              <div class="timeline-note">PS3 · Iram of the Pillars · Arabian Desert</div>
+            </div>
+          </div>
+          <div class="timeline-row reveal" data-delay="240">
+            <div class="timeline-year">2016</div>
+            <div class="timeline-bar"></div>
+            <div class="timeline-info">
+              <div class="timeline-game">Uncharted 4: A Thief's End</div>
+              <div class="timeline-note">PS4 · Libertalia · Madagascar</div>
+            </div>
+          </div>
+          <div class="timeline-row reveal" data-delay="320">
+            <div class="timeline-year">2017</div>
+            <div class="timeline-bar"></div>
+            <div class="timeline-info">
+              <div class="timeline-game">Uncharted: The Lost Legacy</div>
+              <div class="timeline-note">PS4 · Tusk of Ganesh · India</div>
+            </div>
+          </div>
+        </div>
+        <div style="text-align:center; margin-top:3rem;">
+          <a href="games.html" class="btn btn-gold">Full Game Details →</a>
+        </div>
+      </div>
+    </section>
+
+    <section style="padding:6rem 2rem; text-align:center; background:var(--dark-bg);">
+      <div class="reveal" style="max-width:700px; margin:0 auto;">
+        <div style="font-size:4rem; color:rgba(201,168,76,0.12); font-family:serif; line-height:1; margin-bottom:1rem;">"</div>
+        <blockquote style="font-family:'Crimson Text',serif; font-style:italic; font-size:clamp(1.3rem,3vw,2rem); color:var(--parchment); line-height:1.6;">
+          Some things are worth more than gold.
+        </blockquote>
+        <div style="font-family:'Cinzel',serif; color:var(--gold-dark); font-size:0.7rem; letter-spacing:0.3em; text-transform:uppercase; margin-top:1.5rem;">— Nathan Drake</div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="footer-logo">⚓ Uncharted Universe</div>
+    <div class="footer-links">
+      <a href="index.html">Home</a>
+      <a href="characters.html">Characters</a>
+      <a href="games.html">Games</a>
+      <a href="movie.html">Movie</a>
+      <a href="lore.html">Lore</a>
+    </div>
+    <p class="footer-disclaimer">Fan-made tribute. Uncharted™ is a trademark of Sony Interactive Entertainment &amp; Naughty Dog.</p>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>

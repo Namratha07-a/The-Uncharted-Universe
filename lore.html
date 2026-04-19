@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lore — Uncharted Universe</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Cinzel:wght@400;600;700&family=Crimson+Text:ital,wght@0,400;0,600;1,400&display=swap">
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🗺️</text></svg>" />
+</head>
+<body>
+
+
+  <div id="scroll-progress"></div>
+
+  <nav id="navbar">
+    <a href="index.html" class="nav-brand">⚓ Uncharted <span>Universe</span></a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="characters.html">Characters</a></li>
+      <li><a href="games.html">Games</a></li>
+      <li><a href="movie.html">Movie</a></li>
+      <li><a href="lore.html" class="active">Lore</a></li>
+    </ul>
+    <button class="nav-music-btn" title="Play music">🎵</button>
+    <div class="hamburger"><span></span><span></span><span></span></div>
+  </nav>
+  <div class="mobile-menu">
+    <a href="index.html">🏠 Home</a>
+    <a href="characters.html">🧍 Characters</a>
+    <a href="games.html">🗺️ Games</a>
+    <a href="movie.html">🎬 Movie</a>
+    <a href="lore.html">📜 Lore</a>
+    <a href="login.html">🔑 Sign In</a>
+  </div>
+
+  <main class="page-content">
+
+    <!-- Hero -->
+    <div class="lore-hero">
+      <div class="lore-hero-map"></div>
+      <div class="lore-hero-content">
+        <div class="lore-hero-badge">Deep dive</div>
+        <h1 class="lore-hero-title">Lore &amp; Secrets</h1>
+        <p class="lore-hero-sub">The history and mythology behind the games</p>
+      </div>
+    </div>
+
+    <!-- ── TREASURES GALLERY ── -->
+    <section class="section">
+      <div class="section-title reveal">Legendary Treasures</div>
+      <div class="section-divider reveal"></div>
+
+      <div class="treasures-grid">
+
+        <div class="treasure-card reveal" data-delay="0">
+          <div class="treasure-card-icon">
+            <div class="img-placeholder" data-label="el-dorado.jpg" style="width:100%;height:130px;min-height:unset;border-radius:3px 3px 0 0;">
+             <img src="images/el-dorado.jpg" alt="El Dorado Idol" class="treasure-icon-img">
+            </div>
+            <!-- Replace with: <img src="images/el-dorado.jpg" alt="El Dorado Idol" class="treasure-icon-img"> -->
+          </div>
+          <div class="treasure-card-body">
+            <div class="treasure-card-game">Uncharted 1</div>
+            <h3 class="treasure-card-name">El Dorado</h3>
+            <p class="treasure-card-desc">Not a city of gold but a cursed idol — a sarcophagus holding a supernatural mutagen that transforms humans into feral beasts. The Nazis found it in WWII; Nate's crew found the Nazis' bones.</p>
+            <div class="treasure-card-status danger">⚠ Destroyed at sea</div>
+          </div>
+        </div>
+
+        <div class="treasure-card reveal" data-delay="100">
+          <div class="treasure-card-icon">
+            <div class="img-placeholder" data-label="cintamani-stone.jpg" style="width:100%;height:130px;min-height:unset;border-radius:3px 3px 0 0;">
+              <img src="images/cintamani-stone.jpg" alt="Cintamani Stone" class="treasure-icon-img">
+            </div>
+            <!-- Replace with: <img src="images/cintamani-stone.jpg" alt="Cintamani Stone" class="treasure-icon-img"> -->
+          </div>
+          <div class="treasure-card-body">
+            <div class="treasure-card-game">Uncharted 2</div>
+            <h3 class="treasure-card-name">Cintamani Stone</h3>
+            <p class="treasure-card-desc">Believed to be a giant sapphire from Shambhala, the stone is actually solidified resin from the Tree of Life — granting superhuman strength and regeneration to those who drink its sap.</p>
+            <div class="treasure-card-status danger">⚠ Tree destroyed, stone inert</div>
+          </div>
+        </div>
+
+        <div class="treasure-card reveal" data-delay="200">
+          <div class="treasure-card-icon">
+            <div class="img-placeholder" data-label="iram-pillars.jpg" style="width:100%;height:130px;min-height:unset;border-radius:3px 3px 0 0;">
+              <img src="images/iram-of-the-pillars.jpg" alt="Iram of the Pillars" class="treasure-icon-img">
+            </div>
+            <!-- Replace with: <img src="images/iram-pillars.jpg" alt="Iram of the Pillars" class="treasure-icon-img"> -->
+          </div>
+          <div class="treasure-card-body">
+            <div class="treasure-card-game">Uncharted 3</div>
+            <h3 class="treasure-card-name">Iram of the Pillars</h3>
+            <p class="treasure-card-desc">The "Atlantis of the Sands" — a real city buried under the Arabian desert. Its waters cause horrific hallucinations and madness. Marlowe sought to weaponize the supply and control world leaders.</p>
+            <div class="treasure-card-status danger">⚠ City swallowed by sands</div>
+          </div>
+        </div>
+
+        <div class="treasure-card reveal" data-delay="300">
+          <div class="treasure-card-icon">
+            <div class="img-placeholder" data-label="libertalia.jpg" style="width:100%;height:130px;min-height:unset;border-radius:3px 3px 0 0;">
+              <img src="images/libertalia-treasures.jpg" alt="Libertalia Treasury" class="treasure-icon-img">
+            </div>
+            <!-- Replace with: <img src="images/libertalia.jpg" alt="Libertalia Treasury" class="treasure-icon-img"> -->
+          </div>
+          <div class="treasure-card-body">
+            <div class="treasure-card-game">Uncharted 4</div>
+            <h3 class="treasure-card-name">Libertalia's Treasury</h3>
+            <p class="treasure-card-desc">The accumulated plunder of 12 pirate captains who founded a utopian colony in Madagascar. Henry Avery's hoard — the largest private fortune in the 17th century — hidden in a ghost city.</p>
+            <div class="treasure-card-status safe">✓ Partially recovered by Nate &amp; Elena</div>
+          </div>
+        </div>
+
+        <div class="treasure-card reveal" data-delay="400">
+          <div class="treasure-card-icon">
+            <div class="img-placeholder" data-label="tusk-ganesh.jpg" style="width:100%;height:130px;min-height:unset;border-radius:3px 3px 0 0;">
+             <img src="images/tusk-of-ganesh.jpg" alt="Tusk of Ganesh" class="treasure-icon-img">
+            </div>
+            <!-- Replace with: <img src="images/tusk-ganesh.jpg" alt="Tusk of Ganesh" class="treasure-icon-img"> -->
+          </div>
+          <div class="treasure-card-body">
+            <div class="treasure-card-game">The Lost Legacy</div>
+            <h3 class="treasure-card-name">Tusk of Ganesh</h3>
+            <p class="treasure-card-desc">The broken tusk of the Hindu god Ganesh, used to write the Mahabharata. Hidden within the ruins of the Hoysala Empire in the Western Ghats of India. A national treasure and cultural symbol.</p>
+            <div class="treasure-card-status safe">✓ Recovered &amp; preserved</div>
+          </div>
+        </div>
+
+        <div class="treasure-card reveal" data-delay="500">
+          <div class="treasure-card-icon">
+            <div class="img-placeholder" data-label="drakes-ring.jpg" style="width:100%;height:130px;min-height:unset;border-radius:3px 3px 0 0;">
+              <img src="images/drakes-ring.jpg" alt="Drake's Ring" class="treasure-icon-img">
+            </div>
+            <!-- Replace with: <img src="images/drakes-ring.jpg" alt="Drake's Ring" class="treasure-icon-img"> -->
+          </div>
+          <div class="treasure-card-body">
+            <div class="treasure-card-game">All Games</div>
+            <h3 class="treasure-card-name">Drake's Ring &amp; Journal</h3>
+            <p class="treasure-card-desc">Sir Francis Drake's ring — engraved "Sic Parvis Magna" (greatness from small beginnings) — and his personal journal are the recurring key to every adventure. Nate never removes the ring.</p>
+            <div class="treasure-card-status neutral">★ Nate's most prized possession</div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ── HISTORICAL REAL vs FICTION ── -->
+    <section style="background:var(--dark-panel); padding:5rem 2rem; border-top:1px solid rgba(201,168,76,0.08);">
+      <div style="max-width:1100px; margin:0 auto;">
+        <div class="section-title reveal">Real History vs. Uncharted Fiction</div>
+        <div class="section-divider reveal"></div>
+
+        <div class="history-grid">
+
+          <div class="history-card reveal" data-delay="0">
+            <div class="history-card-header">
+              <span class="history-icon">⚓</span>
+              <div>
+                <div class="history-name">Francis Drake</div>
+                <div class="history-type real">Real Person</div>
+              </div>
+            </div>
+            <div class="history-real">
+              <div class="history-label">Reality</div>
+              <p>Sir Francis Drake (c.1540–1596) was an English privateer and the second person to circumnavigate the globe. He raided Spanish ships under Queen Elizabeth I's approval and was considered a hero in England but a pirate by Spain.</p>
+            </div>
+            <div class="history-fiction">
+              <div class="history-label fiction">Uncharted</div>
+              <p>Drake supposedly faked his own death, hid the secret of El Dorado in a coffin at sea, and left a coded journal for his descendants. Nate claims to be one of those descendants — though the games subtly imply this may be wishful thinking.</p>
+            </div>
+          </div>
+
+          <div class="history-card reveal" data-delay="100">
+            <div class="history-card-header">
+              <span class="history-icon">🗺️</span>
+              <div>
+                <div class="history-name">Marco Polo's Lost Fleet</div>
+                <div class="history-type real">Real Mystery</div>
+              </div>
+            </div>
+            <div class="history-real">
+              <div class="history-label">Reality</div>
+              <p>Marco Polo's 1292 return voyage from China to Persia is genuinely mysterious. He departed with 600 sailors and arrived with 18. He never explained what happened to the rest. Historians have debated it for centuries.</p>
+            </div>
+            <div class="history-fiction">
+              <div class="history-label fiction">Uncharted</div>
+              <p>In Among Thieves, Polo discovered Shambhala and was forced to destroy any evidence of its existence. The 582 who died were transformed by the Cintamani Stone's power. Polo smuggled one blue resin lamp out of the hidden city.</p>
+            </div>
+          </div>
+
+          <div class="history-card reveal" data-delay="200">
+            <div class="history-card-header">
+              <span class="history-icon">🏴‍☠️</span>
+              <div>
+                <div class="history-name">Henry Avery</div>
+                <div class="history-type real">Real Pirate</div>
+              </div>
+            </div>
+            <div class="history-real">
+              <div class="history-label">Reality</div>
+              <p>Henry Avery (1659–c.1696) was a real English pirate who captured the Ganj-i-Sawai in 1695 — the richest pirate heist in history. He stole £600,000 (hundreds of millions today) and vanished. His fate is genuinely unknown.</p>
+            </div>
+            <div class="history-fiction">
+              <div class="history-label fiction">Uncharted</div>
+              <p>In A Thief's End, Avery co-founded Libertalia with 11 other pirates in Madagascar. Greed eventually turned the captains against each other. Avery was the last survivor, living out his days as an old man guarding a ghost city full of treasure.</p>
+            </div>
+          </div>
+
+          <div class="history-card reveal" data-delay="300">
+            <div class="history-card-header">
+              <span class="history-icon">🏛️</span>
+              <div>
+                <div class="history-name">Hoysala Empire</div>
+                <div class="history-type real">Real Civilization</div>
+              </div>
+            </div>
+            <div class="history-real">
+              <div class="history-label">Reality</div>
+              <p>The Hoysala Empire ruled South India from the 10th–14th centuries. Their temple architecture — featuring extraordinarily detailed carvings on every surface — is considered among humanity's greatest artistic achievements. Halebidu was their capital.</p>
+            </div>
+            <div class="history-fiction">
+              <div class="history-label fiction">Uncharted</div>
+              <p>The Lost Legacy recreates actual Hoysala temple architecture with stunning accuracy. The Tusk of Ganesh is woven into genuine Hindu mythology. Naughty Dog consulted extensively with historians to ensure respectful representation.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ── QUOTE ── -->
+    <section class="section">
+      <div class="section-title reveal">A line from the series</div>
+      <div class="section-divider reveal"></div>
+      <div class="reveal" style="max-width:700px; margin:2rem auto 0; text-align:center;">
+        <div style="font-size:4rem; color:rgba(201,168,76,0.12); font-family:serif; line-height:1; margin-bottom:1rem;">"</div>
+        <blockquote style="font-family:'Crimson Text',serif; font-style:italic; font-size:clamp(1.2rem,2.5vw,1.7rem); color:var(--parchment); line-height:1.7;">
+          We don't get to choose how we start in this life. Real greatness is what you do with the hand you're dealt.
+        </blockquote>
+        <div style="font-family:'Cinzel',serif; color:var(--gold-dark); font-size:0.7rem; letter-spacing:0.25em; text-transform:uppercase; margin-top:1.5rem;">— Victor Sullivan, A Thief's End</div>
+      </div>
+    </section>
+
+    <!-- ── LOCATIONS MAP ── -->
+    <section style="background:var(--dark-panel); padding:5rem 2rem; border-top:1px solid rgba(201,168,76,0.08);">
+      <div style="max-width:1100px; margin:0 auto;">
+        <div class="section-title reveal">Locations Visited</div>
+        <div class="section-divider reveal"></div>
+
+        <!-- Treasure coin -->
+        <div style="text-align:center; margin-bottom:1.5rem;">
+        </div>
+
+        <div class="locations-grid">
+          <div class="location-item reveal" data-delay="0"><span class="location-flag">🌴</span><div><div class="location-name">South America</div><div class="location-game">Drake's Fortune</div></div></div>
+          <div class="location-item reveal" data-delay="60"><span class="location-flag">🕌</span><div><div class="location-name">Istanbul, Turkey</div><div class="location-game">Among Thieves</div></div></div>
+          <div class="location-item reveal" data-delay="120"><span class="location-flag">🏔️</span><div><div class="location-name">Nepal / Himalayas</div><div class="location-game">Among Thieves</div></div></div>
+          <div class="location-item reveal" data-delay="180"><span class="location-flag">🇫🇷</span><div><div class="location-name">Château, France</div><div class="location-game">Drake's Deception</div></div></div>
+          <div class="location-item reveal" data-delay="240"><span class="location-flag">🌙</span><div><div class="location-name">Ubar, Yemen / Oman</div><div class="location-game">Drake's Deception</div></div></div>
+          <div class="location-item reveal" data-delay="300"><span class="location-flag">🏴󠁧󠁢󠁳󠁣󠁴󠁿</span><div><div class="location-name">Scotland (Avery's Church)</div><div class="location-game">A Thief's End</div></div></div>
+          <div class="location-item reveal" data-delay="360"><span class="location-flag">🇮🇹</span><div><div class="location-name">Genoa, Italy</div><div class="location-game">A Thief's End</div></div></div>
+          <div class="location-item reveal" data-delay="420"><span class="location-flag">🦁</span><div><div class="location-name">Madagascar (Libertalia)</div><div class="location-game">A Thief's End</div></div></div>
+          <div class="location-item reveal" data-delay="480"><span class="location-flag">🇮🇳</span><div><div class="location-name">Western Ghats, India</div><div class="location-game">The Lost Legacy</div></div></div>
+          <div class="location-item reveal" data-delay="540"><span class="location-flag">🇵🇦</span><div><div class="location-name">Panama Prison</div><div class="location-game">A Thief's End</div></div></div>
+          <div class="location-item reveal" data-delay="600"><span class="location-flag">🌊</span><div><div class="location-name">Pirate Island Colony</div><div class="location-game">Drake's Fortune</div></div></div>
+          <div class="location-item reveal" data-delay="660"><span class="location-flag">🇸🇾</span><div><div class="location-name">Ubar Ruins, Syria</div><div class="location-game">Drake's Deception</div></div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── RATINGS BARS ── -->
+    <section class="section">
+      <div class="section-title reveal">Game Ratings Breakdown</div>
+      <div class="section-divider reveal"></div>
+
+      <div class="ratings-wrap reveal">
+
+        <div class="rating-row">
+          <div class="rating-game-label">Drake's Fortune</div>
+          <div class="rating-bars">
+            <div class="rating-bar-wrap"><span class="rating-cat">Story</span><div class="rating-track"><div class="rating-fill" data-width="80"></div></div><span class="rating-num">8.0</span></div>
+            <div class="rating-bar-wrap"><span class="rating-cat">Gameplay</span><div class="rating-track"><div class="rating-fill" data-width="78"></div></div><span class="rating-num">7.8</span></div>
+            <div class="rating-bar-wrap"><span class="rating-cat">Visuals</span><div class="rating-track"><div class="rating-fill" data-width="85"></div></div><span class="rating-num">8.5</span></div>
+            <div class="rating-bar-wrap"><span class="rating-cat">Characters</span><div class="rating-track"><div class="rating-fill" data-width="88"></div></div><span class="rating-num">8.8</span></div>
+          </div>
+        </div>
+
+        <div class="rating-row">
+          <div class="rating-game-label">Among Thieves ★</div>
+          <div class="rating-bars">
+            <div class="rating-bar-wrap"><span class="rating-cat">Story</span><div class="rating-track"><div class="rating-fill gold" data-width="97"></div></div><span class="rating-num">9.7</span></div>
+            <div class="rating-bar-wrap"><span class="rating-cat">Gameplay</span><div class="rating-track"><div class="rating-fill gold" data-width="95"></div></div><span class="rating-num">9.5</span></div>
+            <div class="rating-bar-wrap"><span class="rating-cat">Visuals</span><div class="rating-track"><div class="rating-fill gold" data-width="96"></div></div><span class="rating-num">9.6</span></div>
+            <div class="rating-bar-wrap"><span class="rating-cat">Characters</span><div class="rating-track"><div class="rating-fill gold" data-width="98"></div></div><span class="rating-num">9.8</span></div>
+          </div>
+        </div>
+
+        <div class="rating-row">
+          <div class="rating-game-label">Drake's Deception</div>
+          <div class="rating-bars">
+            <div class="rating-bar-wrap"><span class="rating-cat">Story</span><div class="rating-track"><div class="rating-fill" data-width="85"></div></div><span class="rating-num">8.5</span></div>
+            <div class="rating-bar-wrap"><span class="rating-cat">Gameplay</span><div class="rating-track"><div class="rating-fill" data-width="88"></div></div><span class="rating-num">8.8</span></div>
+            <div class="rating-bar-wrap"><span class="rating-cat">Visuals</span><div class="rating-track"><div class="rating-fill" data-width="92"></div></div><span class="rating-num">9.2</span></div>
+            <div class="rating-bar-wrap"><span class="rating-cat">Characters</span><div class="rating-track"><div class="rating-fill" data-width="90"></div></div><span class="rating-num">9.0</span></div>
+          </div>
+        </div>
+
+        <div class="rating-row">
+          <div class="rating-game-label">A Thief's End ★</div>
+          <div class="rating-bars">
+            <div class="rating-bar-wrap"><span class="rating-cat">Story</span><div class="rating-track"><div class="rating-fill gold" data-width="96"></div></div><span class="rating-num">9.6</span></div>
+            <div class="rating-bar-wrap"><span class="rating-cat">Gameplay</span><div class="rating-track"><div class="rating-fill gold" data-width="92"></div></div><span class="rating-num">9.2</span></div>
+            <div class="rating-bar-wrap"><span class="rating-cat">Visuals</span><div class="rating-track"><div class="rating-fill gold" data-width="98"></div></div><span class="rating-num">9.8</span></div>
+            <div class="rating-bar-wrap"><span class="rating-cat">Characters</span><div class="rating-track"><div class="rating-fill gold" data-width="97"></div></div><span class="rating-num">9.7</span></div>
+          </div>
+        </div>
+
+        <div class="rating-row">
+          <div class="rating-game-label">The Lost Legacy</div>
+          <div class="rating-bars">
+            <div class="rating-bar-wrap"><span class="rating-cat">Story</span><div class="rating-track"><div class="rating-fill" data-width="84"></div></div><span class="rating-num">8.4</span></div>
+            <div class="rating-bar-wrap"><span class="rating-cat">Gameplay</span><div class="rating-track"><div class="rating-fill" data-width="86"></div></div><span class="rating-num">8.6</span></div>
+            <div class="rating-bar-wrap"><span class="rating-cat">Visuals</span><div class="rating-track"><div class="rating-fill" data-width="91"></div></div><span class="rating-num">9.1</span></div>
+            <div class="rating-bar-wrap"><span class="rating-cat">Characters</span><div class="rating-track"><div class="rating-fill" data-width="88"></div></div><span class="rating-num">8.8</span></div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ── FUN FACTS ── -->
+    <section style="background:var(--dark-panel); padding:5rem 2rem; border-top:1px solid rgba(201,168,76,0.08);">
+      <div style="max-width:1000px; margin:0 auto;">
+        <div class="section-title reveal">Some facts</div>
+        <div class="section-divider reveal"></div>
+
+        <div class="facts-grid">
+          <div class="fact-card reveal" data-delay="0">
+            <div class="fact-num">01</div>
+            <p>Naughty Dog spent over <strong>3 years</strong> making Uncharted 4, employing a team of 300+ developers. The game's opening sequence alone was redesigned multiple times.</p>
+          </div>
+          <div class="fact-card reveal" data-delay="80">
+            <div class="fact-num">02</div>
+            <p>Nathan Drake was partly inspired by <strong>Harrison Ford</strong>'s Indiana Jones, but his personality draws heavily from <strong>Johnny Knoxville</strong>'s everyman recklessness.</p>
+          </div>
+          <div class="fact-card reveal" data-delay="160">
+            <div class="fact-num">03</div>
+            <p>The <strong>train sequence</strong> in Among Thieves is widely considered one of the greatest action set-pieces in gaming history. It was recreated almost shot-for-shot in fan film tributes.</p>
+          </div>
+          <div class="fact-card reveal" data-delay="240">
+            <div class="fact-num">04</div>
+            <p>Sic Parvis Magna — Francis Drake's real historical motto — translates to <strong>"Greatness from small beginnings"</strong> and appears engraved on Nate's ring throughout every game.</p>
+          </div>
+          <div class="fact-card reveal" data-delay="320">
+            <div class="fact-num">05</div>
+            <p>Nolan North, who voices Nate, was also the voice of <strong>The Penguin</strong> in Batman: Arkham City, <strong>Deadpool</strong>, and hundreds of other video game characters. He's one of the most prolific voice actors in history.</p>
+          </div>
+          <div class="fact-card reveal" data-delay="400">
+            <div class="fact-num">06</div>
+            <p>The <strong>Madagascar open-world segment</strong> of Uncharted 4 was Naughty Dog's first experiment with large open environments — paving the way for The Last of Us Part II's Seattle sections.</p>
+          </div>
+          <div class="fact-card reveal" data-delay="480">
+            <div class="fact-num">07</div>
+            <p>In A Thief's End's epilogue, Nate and Elena's daughter <strong>Cassie</strong> discovers her parents' adventuring history. The game's final collectible — Drake's journal — is found in her room.</p>
+          </div>
+          <div class="fact-card reveal" data-delay="560">
+            <div class="fact-num">08</div>
+            <p>The <strong>entire Uncharted franchise</strong> has won more than 200 Game of the Year awards across its five entries — more than almost any other PlayStation exclusive franchise in history.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section style="padding:5rem 2rem; text-align:center;">
+      <div class="reveal">
+        <h3 style="font-family:'Cinzel Decorative',serif; color:var(--gold); font-size:1.4rem; margin-bottom:1rem;">Start exploring</h3>
+        <p style="color:var(--parchment-dark); max-width:500px; margin:0 auto 2rem;">Pick up the games — they hold up.</p>
+        <a href="games.html" class="btn btn-gold">Explore All Games →</a>
+        &nbsp;&nbsp;
+        <a href="characters.html" class="btn btn-outline">Meet the Characters</a>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="footer-logo">⚓ Uncharted Universe</div>
+    <div class="footer-links">
+      <a href="index.html">Home</a>
+      <a href="characters.html">Characters</a>
+      <a href="games.html">Games</a>
+      <a href="movie.html">Movie</a>
+      <a href="lore.html" class="active">Lore</a>
+    </div>
+    <p class="footer-disclaimer">Fan-made tribute. Uncharted™ is a trademark of Sony Interactive Entertainment & Naughty Dog.</p>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>

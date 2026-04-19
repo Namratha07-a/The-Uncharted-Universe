@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sign In — Uncharted Universe</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Cinzel:wght@400;600;700&family=Crimson+Text:ital,wght@0,400;0,600;1,400&display=swap">
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🗺️</text></svg>" />
+</head>
+<body class="login-page">
+
+  <!-- Animated map background -->
+  <div class="login-bg">
+    <div class="login-bg-grid"></div>
+    <div class="login-bg-radial"></div>
+    <!-- Floating particles -->
+    <div class="login-particles" id="loginParticles"></div>
+  </div>
+
+  <!-- Back to site (guest) -->
+  <a href="index.html" class="login-back-link">← Explore as Guest</a>
+
+  <!-- Main card -->
+  <div class="login-wrap">
+
+    <!-- Brand -->
+    <div class="login-brand">
+      <div class="login-brand-icon">⚓</div>
+      <h1 class="login-brand-name">Uncharted Universe</h1>
+      <p class="login-brand-tagline">Sign in to save your progress</p>
+    </div>
+
+    <!-- Tab switcher -->
+    <div class="login-tabs">
+      <button class="login-tab active" id="tabSignIn" onclick="switchTab('signin')">Sign In</button>
+      <button class="login-tab" id="tabSignUp" onclick="switchTab('signup')">Create Account</button>
+    </div>
+
+    <!-- ── SIGN IN FORM ── -->
+    <div class="login-form-wrap" id="formSignIn">
+      <div class="login-form-header">
+        <div class="login-form-icon">🧗</div>
+        <h2 class="login-form-title">Welcome back</h2>
+        <p class="login-form-sub">Enter your details below</p>
+      </div>
+
+      <div id="signinError" class="login-error" style="display:none;"></div>
+
+      <div class="login-field">
+        <label class="login-label" for="signinUsername">Username</label>
+        <div class="login-input-wrap">
+          <span class="login-input-icon">👤</span>
+          <input class="login-input" id="signinUsername" type="text" placeholder="Enter your username" autocomplete="username" />
+        </div>
+      </div>
+
+      <div class="login-field">
+        <label class="login-label" for="signinPassword">Password</label>
+        <div class="login-input-wrap">
+          <span class="login-input-icon">🔒</span>
+          <input class="login-input" id="signinPassword" type="password" placeholder="Enter your password" autocomplete="current-password" />
+          <button class="login-toggle-pw" type="button" onclick="togglePw('signinPassword', this)" title="Show/hide password">👁</button>
+        </div>
+      </div>
+
+      <div class="login-remember-row">
+        <label class="login-checkbox-label">
+          <input type="checkbox" id="rememberMe" class="login-checkbox" />
+          <span class="login-checkbox-custom"></span>
+          Remember me
+        </label>
+        <button class="login-forgot" type="button" onclick="showForgot()">Forgot password?</button>
+      </div>
+
+      <button class="btn btn-gold login-submit" id="signinBtn" onclick="handleSignIn()">
+        Sign In &nbsp;→
+      </button>
+
+      <div class="login-divider"><span>or continue as</span></div>
+
+      <button class="login-guest-btn" onclick="continueAsGuest()">
+        🗺️ &nbsp;Guest Explorer
+      </button>
+    </div>
+
+    <!-- ── SIGN UP FORM ── -->
+    <div class="login-form-wrap" id="formSignUp" style="display:none;">
+      <div class="login-form-header">
+        <div class="login-form-icon">🏴‍☠️</div>
+        <h2 class="login-form-title">Create an account</h2>
+        <p class="login-form-sub">Fill in the form to get started</p>
+      </div>
+
+      <div id="signupError" class="login-error" style="display:none;"></div>
+      <div id="signupSuccess" class="login-success" style="display:none;"></div>
+
+      <div class="login-field">
+        <label class="login-label" for="signupUsername">Username</label>
+        <div class="login-input-wrap">
+          <span class="login-input-icon">👤</span>
+          <input class="login-input" id="signupUsername" type="text" placeholder="Choose a username" autocomplete="username" />
+        </div>
+        <div class="login-field-hint">3–20 characters, letters and numbers only</div>
+      </div>
+
+      <div class="login-field">
+        <label class="login-label" for="signupEmail">Email <span class="login-optional">(optional)</span></label>
+        <div class="login-input-wrap">
+          <span class="login-input-icon">✉️</span>
+          <input class="login-input" id="signupEmail" type="email" placeholder="your@email.com" autocomplete="email" />
+        </div>
+      </div>
+
+      <div class="login-field">
+        <label class="login-label" for="signupPassword">Password</label>
+        <div class="login-input-wrap">
+          <span class="login-input-icon">🔒</span>
+          <input class="login-input" id="signupPassword" type="password" placeholder="Choose a strong password" autocomplete="new-password" />
+          <button class="login-toggle-pw" type="button" onclick="togglePw('signupPassword', this)" title="Show/hide">👁</button>
+        </div>
+        <!-- Password strength meter -->
+        <div class="pw-strength-wrap">
+          <div class="pw-strength-bar" id="pwStrengthBar">
+            <div class="pw-strength-fill" id="pwStrengthFill"></div>
+          </div>
+          <span class="pw-strength-label" id="pwStrengthLabel"></span>
+        </div>
+      </div>
+
+      <div class="login-field">
+        <label class="login-label" for="signupConfirm">Confirm Password</label>
+        <div class="login-input-wrap">
+          <span class="login-input-icon">🔒</span>
+          <input class="login-input" id="signupConfirm" type="password" placeholder="Repeat your password" autocomplete="new-password" />
+        </div>
+      </div>
+
+      <!-- Avatar picker -->
+      <div class="login-field">
+        <label class="login-label">Choose Your Explorer Avatar</label>
+        <div class="avatar-grid">
+          <label class="avatar-opt">
+            <input type="radio" name="avatar" value="🧗" checked />
+            <span class="avatar-display">🧗</span>
+            <span class="avatar-name">Climber</span>
+          </label>
+          <label class="avatar-opt">
+            <input type="radio" name="avatar" value="🏴‍☠️" />
+            <span class="avatar-display">🏴‍☠️</span>
+            <span class="avatar-name">Pirate</span>
+          </label>
+          <label class="avatar-opt">
+            <input type="radio" name="avatar" value="🕵️" />
+            <span class="avatar-display">🕵️</span>
+            <span class="avatar-name">Agent</span>
+          </label>
+          <label class="avatar-opt">
+            <input type="radio" name="avatar" value="📷" />
+            <span class="avatar-display">📷</span>
+            <span class="avatar-name">Reporter</span>
+          </label>
+          <label class="avatar-opt">
+            <input type="radio" name="avatar" value="⚓" />
+            <span class="avatar-display">⚓</span>
+            <span class="avatar-name">Captain</span>
+          </label>
+          <label class="avatar-opt">
+            <input type="radio" name="avatar" value="🗺️" />
+            <span class="avatar-display">🗺️</span>
+            <span class="avatar-name">Explorer</span>
+          </label>
+        </div>
+      </div>
+
+      <button class="btn btn-gold login-submit" id="signupBtn" onclick="handleSignUp()">
+        Create Account &nbsp;→
+      </button>
+
+      <div class="login-divider"><span>already have an account?</span></div>
+
+      <button class="login-ghost-btn" onclick="switchTab('signin')">Sign In Instead</button>
+    </div>
+
+    <!-- ── FORGOT PASSWORD ── -->
+    <div class="login-form-wrap" id="formForgot" style="display:none;">
+      <div class="login-form-header">
+        <div class="login-form-icon">🔑</div>
+        <h2 class="login-form-title">Reset Password</h2>
+        <p class="login-form-sub">Enter your username to reset your password</p>
+      </div>
+      <div id="forgotMsg" class="login-success" style="display:none;"></div>
+      <div class="login-field">
+        <label class="login-label" for="forgotUsername">Username</label>
+        <div class="login-input-wrap">
+          <span class="login-input-icon">👤</span>
+          <input class="login-input" id="forgotUsername" type="text" placeholder="Your username" />
+        </div>
+      </div>
+      <div class="login-field">
+        <label class="login-label" for="forgotNewPw">New Password</label>
+        <div class="login-input-wrap">
+          <span class="login-input-icon">🔒</span>
+          <input class="login-input" id="forgotNewPw" type="password" placeholder="New password" />
+        </div>
+      </div>
+      <button class="btn btn-gold login-submit" onclick="handleForgot()">Reset Password &nbsp;→</button>
+      <button class="login-ghost-btn" style="margin-top:0.7rem;" onclick="switchTab('signin')">← Back to Sign In</button>
+    </div>
+
+    <!-- Footer note -->
+    <p class="login-footer-note">
+      Data is stored locally on your device only.<br/>
+      No servers, no tracking, no data leaves your browser.
+    </p>
+
+  </div><!-- /.login-wrap -->
+
+  <script src="main.js"></script>
+  <script>
+    /* ── Tab switching ── */
+    function switchTab(tab) {
+      document.getElementById('formSignIn').style.display  = tab === 'signin'  ? '' : 'none';
+      document.getElementById('formSignUp').style.display  = tab === 'signup'  ? '' : 'none';
+      document.getElementById('formForgot').style.display  = 'none';
+      document.getElementById('tabSignIn').classList.toggle('active', tab === 'signin');
+      document.getElementById('tabSignUp').classList.toggle('active', tab === 'signup');
+      clearErrors();
+    }
+
+    function showForgot() {
+      document.getElementById('formSignIn').style.display = 'none';
+      document.getElementById('formSignUp').style.display = 'none';
+      document.getElementById('formForgot').style.display = '';
+      document.getElementById('tabSignIn').classList.remove('active');
+      document.getElementById('tabSignUp').classList.remove('active');
+    }
+
+    function clearErrors() {
+      ['signinError','signupError','signupSuccess','forgotMsg'].forEach(function(id) {
+        var el = document.getElementById(id);
+        if (el) { el.style.display = 'none'; el.textContent = ''; }
+      });
+    }
+
+    function showError(id, msg) {
+      var el = document.getElementById(id);
+      if (!el) return;
+      el.textContent = msg;
+      el.style.display = 'block';
+      el.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    }
+
+    function showSuccess(id, msg) {
+      var el = document.getElementById(id);
+      if (!el) return;
+      el.textContent = msg;
+      el.style.display = 'block';
+    }
+
+    /* ── Password visibility ── */
+    function togglePw(inputId, btn) {
+      var inp = document.getElementById(inputId);
+      if (inp.type === 'password') { inp.type = 'text';     btn.textContent = '🙈'; }
+      else                         { inp.type = 'password'; btn.textContent = '👁';  }
+    }
+
+    /* ── Password strength ── */
+    document.getElementById('signupPassword').addEventListener('input', function() {
+      var pw = this.value;
+      var score = 0;
+      if (pw.length >= 8)                score++;
+      if (/[A-Z]/.test(pw))             score++;
+      if (/[0-9]/.test(pw))             score++;
+      if (/[^A-Za-z0-9]/.test(pw))      score++;
+      var fill  = document.getElementById('pwStrengthFill');
+      var label = document.getElementById('pwStrengthLabel');
+      var levels = ['', 'Weak', 'Fair', 'Good', 'Strong'];
+      var colors = ['', '#8b2e2e', '#8a6a1f', '#4a8fa8', '#2a7a2a'];
+      fill.style.width = (pw.length ? (score / 4 * 100) : 0) + '%';
+      fill.style.background = colors[score] || 'transparent';
+      label.textContent = pw.length ? levels[score] : '';
+      label.style.color = colors[score] || 'transparent';
+    });
+
+    /* ── Auth helpers ── */
+    function getUsers() {
+      try { return JSON.parse(localStorage.getItem('uc_users') || '{}'); } catch(e) { return {}; }
+    }
+    function saveUsers(obj) { localStorage.setItem('uc_users', JSON.stringify(obj)); }
+
+    function setSession(username, avatar, remember) {
+      var sess = { username: username, avatar: avatar, loginTime: Date.now() };
+      sessionStorage.setItem('uc_session', JSON.stringify(sess));
+      if (remember) localStorage.setItem('uc_session', JSON.stringify(sess));
+    }
+
+    /* ── Sign In ── */
+    function handleSignIn() {
+      clearErrors();
+      var username = document.getElementById('signinUsername').value.trim();
+      var password = document.getElementById('signinPassword').value;
+      var remember = document.getElementById('rememberMe').checked;
+
+      if (!username) { showError('signinError', '⚠ Please enter your username.'); return; }
+      if (!password)  { showError('signinError', '⚠ Please enter your password.'); return; }
+
+      var users = getUsers();
+      if (!users[username]) { showError('signinError', '✕ No account found with that username.'); return; }
+      if (users[username].password !== btoa(password)) { showError('signinError', '✕ Incorrect password. Try again.'); return; }
+
+      setSession(username, users[username].avatar || '🧗', remember);
+
+      // Animate button
+      var btn = document.getElementById('signinBtn');
+      btn.textContent = '✓ Welcome back, ' + username + '!';
+      btn.style.background = 'linear-gradient(135deg, #2a6a2a, #3a8a3a)';
+      setTimeout(function() { window.location.href = 'index.html'; }, 900);
+    }
+
+    /* ── Sign Up ── */
+    function handleSignUp() {
+      clearErrors();
+      var username = document.getElementById('signupUsername').value.trim();
+      var email    = document.getElementById('signupEmail').value.trim();
+      var password = document.getElementById('signupPassword').value;
+      var confirm  = document.getElementById('signupConfirm').value;
+      var avatar   = document.querySelector('input[name="avatar"]:checked').value;
+
+      if (!username) { showError('signupError', '⚠ Please choose a username.'); return; }
+      if (!/^[a-zA-Z0-9_]{3,20}$/.test(username)) { showError('signupError', '⚠ Username must be 3–20 characters (letters, numbers, underscores).'); return; }
+      if (!password) { showError('signupError', '⚠ Please choose a password.'); return; }
+      if (password.length < 6) { showError('signupError', '⚠ Password must be at least 6 characters.'); return; }
+      if (password !== confirm) { showError('signupError', '✕ Passwords do not match.'); return; }
+
+      var users = getUsers();
+      if (users[username]) { showError('signupError', '✕ That username is already taken. Please choose another.'); return; }
+
+      users[username] = { password: btoa(password), email: email, avatar: avatar, joinDate: Date.now() };
+      saveUsers(users);
+      setSession(username, avatar, false);
+
+      var btn = document.getElementById('signupBtn');
+      btn.textContent = '✓ Account created!';
+      btn.style.background = 'linear-gradient(135deg, #2a6a2a, #3a8a3a)';
+      showSuccess('signupSuccess', '🏴‍☠️ Welcome aboard, ' + username + '! Redirecting...');
+      setTimeout(function() { window.location.href = 'index.html'; }, 1200);
+    }
+
+    /* ── Forgot password ── */
+    function handleForgot() {
+      var username = document.getElementById('forgotUsername').value.trim();
+      var newPw    = document.getElementById('forgotNewPw').value;
+      var users    = getUsers();
+      if (!username || !users[username]) { showSuccess('forgotMsg', '✕ Username not found.'); return; }
+      if (!newPw || newPw.length < 6)    { showSuccess('forgotMsg', '⚠ Password must be at least 6 characters.'); return; }
+      users[username].password = btoa(newPw);
+      saveUsers(users);
+      document.getElementById('forgotMsg').style.color = 'var(--gold)';
+      showSuccess('forgotMsg', '✓ Password updated! You can now sign in.');
+      setTimeout(function() { switchTab('signin'); }, 1800);
+    }
+
+    /* ── Guest ── */
+    function continueAsGuest() {
+      sessionStorage.setItem('uc_session', JSON.stringify({ username: 'Guest', avatar: '🗺️', guest: true }));
+      window.location.href = 'index.html';
+    }
+
+    /* ── Check if already logged in ── */
+    (function() {
+      var sess = sessionStorage.getItem('uc_session') || localStorage.getItem('uc_session');
+      if (sess) {
+        try {
+          var s = JSON.parse(sess);
+          if (s && s.username && !s.guest) {
+            window.location.href = 'index.html';
+          }
+        } catch(e) {}
+      }
+
+      /* Spawn particles */
+      var container = document.getElementById('loginParticles');
+      for (var i = 0; i < 25; i++) {
+        var p = document.createElement('div');
+        p.className = 'particle';
+        p.style.cssText =
+          'left:' + (Math.random()*100) + '%;' +
+          'animation-duration:' + (8 + Math.random()*14) + 's;' +
+          'animation-delay:' + (Math.random()*10) + 's;' +
+          'width:' + (1 + Math.random()*2) + 'px;' +
+          'height:' + (1 + Math.random()*2) + 'px;';
+        container.appendChild(p);
+      }
+
+      /* Enter key submits active form */
+      document.addEventListener('keydown', function(e) {
+        if (e.key !== 'Enter') return;
+        var fi = document.getElementById('formSignIn');
+        var fu = document.getElementById('formSignUp');
+        var ff = document.getElementById('formForgot');
+        if (fi && fi.style.display !== 'none') handleSignIn();
+        else if (fu && fu.style.display !== 'none') handleSignUp();
+        else if (ff && ff.style.display !== 'none') handleForgot();
+      });
+    })();
+  </script>
+</body>
+</html>
